@@ -1,0 +1,80 @@
+<div class="container  flex flex-col items-center justify-center">
+  <h2>CONATCT SECTION </h2>
+  <div class="star-icon">
+      <mat-icon>star</mat-icon>
+  </div>
+  
+</div>
+
+
+<form [formGroup]="myform" (ngSubmit)="onSubmit()" class="d-block  w-1/2  mx-auto py-8">
+      <div  class="relative h-11 w-full min-w-[200px] mb-10 ">
+        <input  placeholder="User Name" formControlName="userName"
+        class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100" 
+       >
+       <label
+       class="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#1abc9c] peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+       User Name
+     </label>
+
+        <div *ngIf="myform.get('userName')?.invalid && (myform.get('userName')?.dirty || myform.get('userName')?.touched)"
+             class="error-text">
+          <span *ngIf="myform.get('userName')?.errors?.['required']" class="text-red-700">Required</span>
+          <span *ngIf="myform.get('userName')?.errors?.['pattern']" class="text-red-700">Invalid user Name</span>
+        </div>
+      </div>
+
+      <div class="relative h-11 w-full min-w-[200px] mb-10">
+        <input  placeholder="User Age" formControlName="userAge"
+        class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100" 
+       >
+       <label
+       class="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#1abc9c] peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+       User Age
+     </label>
+
+        <div *ngIf="myform.get('userAge')?.invalid && (myform.get('userAge')?.dirty || myform.get('userAge')?.touched)"
+             class="error-text">
+          <span *ngIf="myform.get('userAge')?.errors?.['required']" class="text-red-700">Required</span>
+          <span *ngIf="myform.get('userAge')?.errors?.['pattern']" class="text-red-700">Invalid user age</span>
+        </div>
+      </div>
+      <div class="relative h-11 w-full min-w-[200px] mb-10">
+        <input  placeholder="User Email" formControlName="userEmail"
+        class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100" 
+       >
+       <label
+       class="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#1abc9c] peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+       User Email
+     </label>
+        <div *ngIf="myform.get('userEmail')?.invalid && (myform.get('userEmail')?.dirty || myform.get('userEmail')?.touched)"
+             class="error-text">
+          <span *ngIf="myform.get('userEmail')?.errors?.['required']" class="text-red-700">Required</span>
+          <span *ngIf="myform.get('userEmail')?.errors?.['pattern']" class="text-red-700">Invalid email</span>
+        </div>
+      </div>
+      <div class="relative h-11 w-full min-w-[200px] mb-10">
+        <input  placeholder="User Password" formControlName="userPassword"
+        class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100" 
+       >
+       <label
+       class="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-[#1abc9c] peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+       User Password
+     </label>
+        <div *ngIf="myform.get('userPassword')?.invalid && (myform.get('userPassword')?.dirty || myform.get('userPassword')?.touched)"
+             class="error-text">
+          <span *ngIf="myform.get('userPassword')?.errors?.['required']" class="text-red-700">Required</span>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <button type="submit"
+                class="bg-gray-700 border-transparent rounded-md border-b-4 border-gray-700 cursor-pointer hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 text-white text-base font-semibold uppercase py-3 px-6"
+                [disabled]="!myform.valid">
+          Submit
+        </button>
+      </div> 
+  </form>
+  
+
+  

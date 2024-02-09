@@ -1,0 +1,18 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-7">
+    <div *ngFor="let photo of photos" class="relative m-5" (click)="showImage(photo)">
+      <img [src]="photo.source" [alt]="photo.alt" class="w-full h-auto rounded-xl" />
+      <div class="overlay rounded-xl flex justify-center items-center">
+        <mat-icon class="text-5xl text-white font-bold !w-10 !h-10">add</mat-icon>
+      </div>
+    </div>
+  </div>
+  
+  <div class="light-container d-none" *ngIf="isLightContainerVisible" (click)="hideImage()">
+    <div class="light-box">
+      <img [src]="selectedPhoto?.source" [alt]="selectedPhoto?.alt" class="w-full h-auto rounded-xl" />
+    </div>
+  </div>
+  
+
+
+<!-- <div class="light-box" [style.background-image]="'url(' + selectedPhoto?.source + ')'"></div> -->

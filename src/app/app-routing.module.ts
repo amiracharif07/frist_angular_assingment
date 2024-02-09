@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+const routes: Routes = [
+  { path: '' , redirectTo: 'home' , pathMatch: 'full'},
+  { path : 'home', component: HomeComponent , title: 'Home'},
+  { path : 'portfolio', component: PortfolioComponent , title: 'Portfolio'},
+  { path : 'about', component: AboutComponent , title: 'About'},
+  { path : 'contact', component: ContactComponent , title: 'Contact'},
+  { path : '**' , component: NotFoundComponent , title: 'Not Found'}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes , {scrollPositionRestoration : 'top'}) ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
